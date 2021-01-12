@@ -54,7 +54,7 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    channel = client.get_channel(772744226513485844)
+    channel = client.get_channel()
 
     embed = discord.Embed(title= f"WELCOME TO **{member.guild.name}**", description= f"WELCOME TO OUR SERVER {member.mention}! HOPE YOU ENJOY HERE!", colour = discord.Colour.blue())
     embed.add_field(name = f"READ ALL THE RULES FROM :", value = f"<#772741949789569034>", inline = False)
@@ -67,13 +67,13 @@ async def on_member_join(member):
 
 @client.event
 async def on_member_remove(member):
-    channel = client.get_channel(772744226513485844)
-    await channel.send(f"=================================\n{member.display_name} just left the server <:byebye:771331476074659870> \nWe will miss you! \nHope to see you again soon \n=================================")
+    channel = client.get_channel()
+    await channel.send(f"=================================\n{member.display_name} just left the server <:byebye:> \nWe will miss you! \nHope to see you again soon \n=================================")
 
 
 @client.event
 async def on_message(msg):
-    guild1=client.get_guild(760497345476558919)
+    guild1=client.get_guild()
     
     if "count member" in  msg.content:
         await msg.channel.send(f"```the number of member in the server {guild1.member_count}```")
@@ -201,4 +201,4 @@ async def help(ctx):
 
     await ctx.send(embed = embed)
 
-client.run("NzcyMzkzNTc0NTg3MzAxOTA4.X56Bkg.s684eyj31sVuZUDaZfgN9hRGJ3U")
+client.run("")
